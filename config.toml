@@ -1,0 +1,43 @@
+theme = "horizon-dark"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-format = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics",  "position"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.whitespace.render]
+space = "none"
+newline = "none"
+tab = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+# At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
+[keys.normal]
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+
+[keys.insert]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
